@@ -2,15 +2,16 @@ import {
   DesText,
   Descricao,
   RestContainer,
-  Botao,
   NotaCont,
   Categoria,
   Destaque,
   Avaliacao,
-  DesCat
+  DesCat,
+  BotaoLink
 } from './styles'
 import NotaImg from '../../assets/image/star_favorite.png'
 import Massa from '../../assets/image/macarrao.png'
+import { Link, Links } from 'react-router-dom'
 
 const Restaurante = () => (
   <RestContainer className="container-restaurante">
@@ -39,7 +40,7 @@ const Restaurante = () => (
         sem sair do lar com nosso delivery!
       </DesText>
     </Descricao>
-    <Botao>Saiba mais</Botao>
+    <BotaoLink href="/restaurantes">Saiba mais</BotaoLink>
   </RestContainer>
 )
 
