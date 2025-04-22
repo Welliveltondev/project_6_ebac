@@ -11,6 +11,7 @@ export const FooterConta = styled.div`
     margin: 50px 0 10px;
     text-align: center;
   }
+  margin-bottom: 50px; //remover //
 `
 export const Conteudo = styled.div`
   max-width: 1024px;
@@ -32,4 +33,3 @@ export const SicialMedia = styled.div`
     margin-right: 10px;
   }
 `
-// tirar quando terminar diplay none

@@ -6,7 +6,6 @@ const ListaDeProdutos = () => (
     <Produto />
     <Produto />
     <Produto />
-
     <Produto />
     <Produto />
     <Produto />

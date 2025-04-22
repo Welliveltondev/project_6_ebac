@@ -1,4 +1,5 @@
 import CartCompras from '../CartCompras'
+import Footer from '../Footer'
 import Header from '../Header'
 import { Lista } from '../Listagem/styles'
 import Restaurante from '../Restaurantes'
@@ -6,7 +7,6 @@ import { HomeCon } from './styles'
 
 const Home = () => (
   <>
-    <CartCompras />
     <HomeCon>
       <Header />
       <Lista>
@@ -20,6 +20,8 @@ const Home = () => (
         <Restaurante />
       </Lista>
     </HomeCon>
+    <Footer />
+    <CartCompras />
   </>
 )
 
