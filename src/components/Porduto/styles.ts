@@ -5,6 +5,14 @@ export const DivProduto = styled.div`
   width: 320px;
   height: 340px;
   background-color: ${cores.salmon};
+  margin: 10px;
+  box-shadow: 2px 10px 5px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 10px 20px 10px rgba(0, 0, 0, 0.25);
+    transform: translateX(-5px);
+  }
 `
 export const ImgProdu = styled.img`
   width: 304px;
@@ -37,4 +45,6 @@ export const BotaoProdu = styled.button`
   border: none;
   background-color: ${cores.Bege};
   color: ${cores.salmon};
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 `

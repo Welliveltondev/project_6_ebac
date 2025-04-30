@@ -13,21 +13,33 @@ import NotaImg from '../../assets/image/star_favorite.png'
 import Massa from '../../assets/image/macarrao.png'
 import { Link, Links } from 'react-router-dom'
 
-const Restaurante = () => (
+export type PropsRestaurante = {
+  nome: string
+  destaque: string
+  categoria?: string
+  avaliacoes?: number
+}
+
+const Restaurante = ({
+  nome,
+  categoria,
+  destaque,
+  avaliacoes
+}: PropsRestaurante) => (
   <RestContainer className="container-restaurante">
-    <div>
+    <div id="pefil">
       <img src={Massa} alt="" />
       <DesCat>
-        <Destaque>Destaque da semana</Destaque>
-        <Categoria>Japonesa</Categoria>
+        <Destaque>{destaque}</Destaque>
+        <Categoria>{categoria}</Categoria>
       </DesCat>
     </div>
 
     <NotaCont>
       <div>
-        <h2>Hioki Sushi </h2>
+        <h2>{nome} </h2>
         <div>
-          <span>4.9</span> <Avaliacao src={NotaImg} alt="" />
+          <span>{avaliacoes}</span> <Avaliacao src={NotaImg} alt="" />
         </div>
       </div>
     </NotaCont>

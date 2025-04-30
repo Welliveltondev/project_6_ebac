@@ -1,6 +1,5 @@
 import hero from '../../assets/image/Vector.png'
 import logo from '../../assets/image/logo.png'
-import text from '../../assets/image/Vector.png'
 
 import { DivLogo, Hero, Img, TextDesc } from './styles'
 
