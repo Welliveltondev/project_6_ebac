@@ -18,6 +18,7 @@ export type PropsRestaurante = {
   destaque: string
   categoria?: string
   avaliacoes?: number
+  ref?: string
 }
 
 const Restaurante = ({
@@ -27,7 +28,7 @@ const Restaurante = ({
   avaliacoes
 }: PropsRestaurante) => (
   <RestContainer className="container-restaurante">
-    <div id="pefil">
+    <div id="#">
       <img src={Massa} alt="" />
       <DesCat>
         <Destaque>{destaque}</Destaque>
@@ -52,7 +53,7 @@ const Restaurante = ({
         sem sair do lar com nosso delivery!
       </DesText>
     </Descricao>
-    <BotaoLink href="/restaurantes">Saiba mais</BotaoLink>
+    <BotaoLink href="/perfil">Saiba mais</BotaoLink>
   </RestContainer>
 )
 

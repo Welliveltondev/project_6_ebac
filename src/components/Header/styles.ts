@@ -31,7 +31,7 @@ export const TextDesc = styled.div`
     margin-top: 60px;
     font-family: Roboto, sans-serif;
     font-weight: 900;
-    font-size: 40px;
+    font-size: 36px;
     line-height: 100%;
     text-align: center;
     color: ${cores.salmon};

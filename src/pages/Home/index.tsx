@@ -1,9 +1,9 @@
-import Footer from '../Footer'
-import Header from '../Header'
+import Footer from '../../components/Footer'
+import Header from '../../components/Header'
 import { Lista } from './styles'
-import Restaurante from '../Restaurantes'
+import Restaurante from '../../components/Restaurantes'
 import { HomeCon } from './styles'
-import Perfil from '../Perfil'
+import Perfil from '../../components/Perfil'
 
 const Home = () => (
   <>

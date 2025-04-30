@@ -10,8 +10,8 @@ export const DivProduto = styled.div`
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    box-shadow: 10px 20px 10px rgba(0, 0, 0, 0.25);
-    transform: translateX(-5px);
+    box-shadow: 5px 20px 10px rgba(0, 0, 0, 0.25);
+    transform: translateY(-5px);
   }
 `
 export const ImgProdu = styled.img`

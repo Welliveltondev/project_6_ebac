@@ -15,7 +15,6 @@ import {
 import LogoImg from '../../assets/image/logo.png'
 import Massa from '../../assets/image/macarrao.png'
 import Vetor from '../../assets/image/Vector.png'
-import { ParagraPro } from '../Porduto/styles'
 
 const Perfil = () => {
   return (
