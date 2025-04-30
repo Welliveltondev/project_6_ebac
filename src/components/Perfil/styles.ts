@@ -4,7 +4,6 @@ import Produto from '../Porduto'
 export const PerfilContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
   margin-bottom: 50px;
   position: relative;
 `
@@ -34,12 +33,13 @@ export const RestPerfil = styled.span`
   color: #e66767;
 `
 
-export const CartPefil = styled.span`
+export const CartPefil = styled.a`
   width: 256px;
   height: 20px;
   font-weight: 900;
   font-size: 18px;
   color: #e66767;
+  cursor: pointer;
 `
 
 export const Apresentacao = styled.div`
