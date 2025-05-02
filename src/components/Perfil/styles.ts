@@ -14,8 +14,8 @@ export const HeaderPerfil = styled.div`
   height: 186px;
 
   div {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     margin: 0 auto;
     max-width: 1024px;
