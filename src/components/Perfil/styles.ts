@@ -9,33 +9,41 @@ export const PerfilContainer = styled.div`
 `
 
 export const HeaderPerfil = styled.div`
-  align-items: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 186px;
 
   div {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
-    margin: 20px;
+    margin: 0 auto;
+    max-width: 1024px;
+    margin-top: 23px;
   }
 `
 export const Logo = styled.div`
   width: 125px;
-  height: 57px;
+  height: 58px;
+  top: -23;
 `
-export const RestPerfil = styled.span`
-  width: 110px;
-  height: 20px;
+export const RestPerfil = styled.p`
+  width: 109px;
+  height: 21px;
+  top: 59px;
+  left: 171px;
   font-size: 18px;
   color: #e66767;
+  line-height: 100%;
+  letter-spacing: 0%;
+  horiontal-align: center;
+  margin-top: 23px;
 `
 
 export const CartPefil = styled.a`
   width: 256px;
-  height: 20px;
+  height: 21px;
+  margin-top: 23px;
   font-weight: 900;
   font-size: 18px;
   color: #e66767;
@@ -58,7 +66,7 @@ export const Apresentacao = styled.div`
     justify-content: space-between;
   }
 
-  ::after {
+  ::before {
     content: '';
     position: absolute;
     top: 0;
@@ -66,6 +74,7 @@ export const Apresentacao = styled.div`
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.1);
+    z-index: 1;
   }
 `
 export const Paragrafo = styled.p`
@@ -75,7 +84,6 @@ export const Paragrafo = styled.p`
   color: #ffffff;
   font-weight: italic;
   line-height: 100%;
-  z-index: 1;
   margin-top: 20px;
 `
 
