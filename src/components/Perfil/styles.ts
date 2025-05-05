@@ -28,7 +28,7 @@ export const Logo = styled.div`
   top: -23;
 `
 export const RestPerfil = styled.p`
-  width: 109px;
+  width: 256px;
   height: 21px;
   top: 59px;
   left: 171px;
