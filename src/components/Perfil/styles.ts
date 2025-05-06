@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Produto from '../Porduto'
+import { cores } from '../../styles'
 
 export const PerfilContainer = styled.div`
   display: flex;
@@ -23,17 +23,14 @@ export const HeaderPerfil = styled.div`
   }
 `
 export const Logo = styled.div`
-  width: 125px;
+  width: 127px;
   height: 58px;
-  top: -23;
 `
 export const RestPerfil = styled.p`
   width: 256px;
   height: 21px;
-  top: 59px;
-  left: 171px;
   font-size: 18px;
-  color: #e66767;
+  color: ${cores.salmon};
   line-height: 100%;
   letter-spacing: 0%;
   horiontal-align: center;
@@ -46,7 +43,7 @@ export const CartPefil = styled.a`
   margin-top: 23px;
   font-weight: 900;
   font-size: 18px;
-  color: #e66767;
+  color: ${cores.salmon};
   cursor: pointer;
 `
 

@@ -33,6 +33,7 @@ export const NotaCont = styled.div`
     align-items: center;
     justify-content: space-between;
     margin: 0 8px;
+    color: ${cores.salmon};
   }
 
   img {
@@ -43,7 +44,7 @@ export const NotaCont = styled.div`
     font-family: Roboto sans-serif;
     font-weight: bold;
     font-size: 18px;
-    color: ${cores.salmon};
+
     margin-top: 15px;
     margin-bottom: 20px;
   }
