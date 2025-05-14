@@ -11,50 +11,64 @@ import {
 } from './styles'
 import NotaImg from '../../assets/image/star_favorite.png'
 import Massa from '../../assets/image/macarrao.png'
-import { Link, Links } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 
-export type PropsRestaurante = {
-  nome: string
-  destaque: string
-  categoria?: string
-  avaliacoes?: number
-  ref?: string
+// export type PropsRestaurante = {
+//   nome: string
+//   destaque: string
+//   categoria?: string
+//   avaliacoes?: number
+//   ref?: string
+// }
+
+export type RestauranteType = {
+  id: number
+  titulo: string
+  destacado?: boolean
+  tipo: string
+  avaliacao: number
+  descricao: string
+  capa: string
+  cardapio?: string
+  preco?: number
 }
 
 const Restaurante = ({
-  nome,
-  categoria,
-  destaque,
-  avaliacoes
-}: PropsRestaurante) => (
-  <RestContainer className="container-restaurante">
-    <div id="#">
-      <img src={Massa} alt="" />
-      <DesCat>
-        <Destaque>{destaque}</Destaque>
-        <Categoria>{categoria}</Categoria>
-      </DesCat>
-    </div>
-
-    <NotaCont>
-      <div>
-        <h2>{nome} </h2>
-        <div>
-          <span>{avaliacoes}</span> <Avaliacao src={NotaImg} alt="" />
-        </div>
+  avaliacao,
+  capa,
+  cardapio,
+  descricao,
+  destacado,
+  id,
+  preco,
+  tipo,
+  titulo
+}: RestauranteType) => {
+  return (
+    <RestContainer className="container-restaurante">
+      <div key={id}>
+        <img src={capa} alt="" />
+        <DesCat>
+          <Destaque>{descricao}</Destaque>
+          <Categoria>{tipo}</Categoria>
+        </DesCat>
       </div>
-    </NotaCont>
 
-    <Descricao>
-      <DesText>
-        Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis
-        frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega
-        rápida, embalagens cuidadosas e qualidade garantida. Experimente o Japão
-        sem sair do lar com nosso delivery!
-      </DesText>
-    </Descricao>
-    <BotaoLink href="/perfil">Saiba mais</BotaoLink>
-  </RestContainer>
-)
+      <NotaCont>
+        <div>
+          <h2>{titulo} </h2>
+          <div>
+            <span>{avaliacao}</span> <Avaliacao src={NotaImg} alt="" />
+          </div>
+        </div>
+      </NotaCont>
+
+      <Descricao>
+        <DesText>{descricao}</DesText>
+      </Descricao>
+      <BotaoLink href="/perfil">Saiba mais</BotaoLink>
+    </RestContainer>
+  )
+}
 
 export default Restaurante

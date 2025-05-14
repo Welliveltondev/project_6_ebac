@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { cores } from '../../styles'
 
 export const FooterConta = styled.div`
-  margin-top: 80px;
+  margin-top: 90px;
   height: 300px;
   width: 100%;
   background-color: ${cores.Bege};

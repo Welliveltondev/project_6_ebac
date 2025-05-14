@@ -1,5 +1,7 @@
-import Footer from '../Footer'
-import Produto from '../Porduto'
+import esfirra from '../../assets/image/esfirra.png'
+import close from '../../assets/image/close.png'
+
+import Produto, { RestauranteType } from '../Produto'
 import {
   HeaderPerfil,
   Logo,
@@ -10,20 +12,18 @@ import {
   Paragrafo2,
   ListaProdutos,
   Paragrafo,
-  ImgModal,
   Title,
-  Description,
   Botao_Modal,
+  Description,
   SaibaMais,
+  ImgModal,
   Conteudo,
   Modal
 } from './styles'
 
-import esfirra from '../../assets/image/esfirra.png'
 import LogoImg from '../../assets/image/logo.png'
 import Massa from '../../assets/image/macarrao.png'
 import Vetor from '../../assets/image/Vector.png'
-import close from '../../assets/image/close.png'
 import { useState } from 'react'
 
 const Perfil = () => {
@@ -54,11 +54,11 @@ const Perfil = () => {
         <Produto />
         <Produto />
         <Produto />
+
         <Produto />
         <Produto />
         <Produto />
       </ListaProdutos>
-      <Footer />
 
       <Modal className="overlay">
         <Conteudo className={modalOpen ? 'visivel' : ''}>
