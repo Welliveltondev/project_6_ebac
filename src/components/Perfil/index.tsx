@@ -86,7 +86,7 @@ const Perfil = () => {
               <br />
               Serve: de 2 a 3 pessoas
             </Description>
-            <Botao_Modal>
+            <Botao_Modal onClick={() => setModalOpen(false)}>
               <SaibaMais>Adicionar ao carrinho - R$60,60</SaibaMais>
             </Botao_Modal>
           </div>

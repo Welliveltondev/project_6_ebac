@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { Lista } from './styles'
 import Restaurante, { RestauranteType } from '../Restaurantes'
 
-type Props = {
+type Aderreços = {
   restaurantes: RestauranteType[]
 }
 
-const ListaDeRestaurantes = ({ restaurantes }: Props) => {
+const ListaDeRestaurantes = () => {
   const [stateRestaurante, setRestaurante] = useState<RestauranteType[]>([])
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const ListaDeRestaurantes = ({ restaurantes }: Props) => {
   }, [])
   return (
     <Lista>
-      {restaurantes.map((restau) => (
+      {stateRestaurante.map((restau) => (
         <Restaurante
           key={restau.id}
           id={restau.id}

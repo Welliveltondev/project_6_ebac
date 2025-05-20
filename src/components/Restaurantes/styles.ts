@@ -5,28 +5,17 @@ import { Link } from 'react-router-dom'
 export const RestContainer = styled.div`
   max-width: 472px;
   width: 100%;
-  height: 412px;
-  position: relative;
+  height: 400px;
   background-color: white;
   border: 1px solid ${cores.salmon};
-  img {
-    width: 100%;
-    align-center: center;
-  }
+  position: relative;
 `
-export const Descricao = styled.div`
-  width: 456px;
-  height: 88px;
-  margin-left: 8px;
-  margin-bottom: 18px;
+
+export const ImgRest = styled.img`
+  width: 100%;
+  height: 218px;
 `
-export const DesText = styled.p`
-  font-family: Roboto sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 22px;
-  color: ${cores.salmon};
-`
+
 export const NotaCont = styled.div`
   div {
     display: flex;
@@ -36,28 +25,15 @@ export const NotaCont = styled.div`
     color: ${cores.salmon};
   }
 
-  img {
-    width: 100%;
-  }
-
   h2 {
     font-family: Roboto sans-serif;
     font-weight: bold;
     font-size: 18px;
-
     margin-top: 15px;
     margin-bottom: 20px;
   }
 `
 
-export const Avaliacao = styled.img`
-  margin-left: 8px;
-  margin-top: -5px;
-`
-export const ImgRest = styled.div`
-  width: 100%;
-  height: 218px;
-`
 export const DesCat = styled.div`
   top: 12px;
   right: 8px;
@@ -83,6 +59,26 @@ export const Categoria = styled.span`
   padding: 5px;
 `
 
+export const Descricao = styled.div`
+  width: 456px;
+  height: 88px;
+  margin-left: 8px;
+  margin-bottom: 18px;
+`
+export const DesText = styled.p`
+  font-family: Roboto sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: ${cores.salmon};
+  margin-top: -16px;
+`
+
+export const Avaliacao = styled.img`
+  margin-left: 8px;
+  margin-top: -5px;
+`
+
 export const BotaoLink = styled.a`
   cursor: pointer;
   width: 100%;
@@ -95,6 +91,6 @@ export const BotaoLink = styled.a`
   color: ${cores.Bege};
   border: none;
   padding: 5px;
-  margin: 10px;
+  margin: 8px;
   text-decoration: none;
 `

@@ -7,7 +7,8 @@ import {
   Destaque,
   Avaliacao,
   DesCat,
-  BotaoLink
+  BotaoLink,
+  ImgRest
 } from './styles'
 import NotaImg from '../../assets/image/star_favorite.png'
 import Massa from '../../assets/image/macarrao.png'
@@ -47,9 +48,9 @@ const Restaurante = ({
   return (
     <RestContainer className="container-restaurante">
       <div key={id}>
-        <img src={capa} alt="" />
+        <ImgRest src={capa} alt="" />
         <DesCat>
-          <Destaque>{descricao}</Destaque>
+          <Destaque>{titulo}</Destaque>
           <Categoria>{tipo}</Categoria>
         </DesCat>
       </div>

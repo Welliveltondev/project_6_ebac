@@ -7,7 +7,7 @@ const Home = () => {
     <>
       <HomeCon>
         <Header />
-        <ListaDeRestaurantes restaurantes={[]} />
+        <ListaDeRestaurantes />
       </HomeCon>
     </>
   )
