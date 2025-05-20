@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import esfirra from '../../assets/image/esfirra.png'
 
 import * as S from './styles'
@@ -16,6 +16,12 @@ export type RestauranteType = {
 }
 
 const Produto = () => {
+  const [produto, setProduto] = useState<RestauranteType[]>()
+  useEffect(() => {
+    fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes')
+      .then((res) => res.json())
+      .then((res) => setProduto(res))
+  }, [])
   return (
     <>
       <S.DivProduto>
@@ -27,8 +33,6 @@ const Produto = () => {
         </S.ParagraPro>
         <S.BotaoProdu>Adicionar ao carrinho</S.BotaoProdu>
       </S.DivProduto>
-
-      {/*Modal aqui*/}
     </>
   )
 }

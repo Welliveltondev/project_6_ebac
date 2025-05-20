@@ -7,7 +7,7 @@ type Aderreços = {
 }
 
 const ListaDeRestaurantes = () => {
-  const [stateRestaurante, setRestaurante] = useState<RestauranteType[]>([])
+  const [stateRestaurantes, setRestaurante] = useState<RestauranteType[]>([])
 
   useEffect(() => {
     fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes')
@@ -16,17 +16,17 @@ const ListaDeRestaurantes = () => {
   }, [])
   return (
     <Lista>
-      {stateRestaurante.map((restau) => (
+      {stateRestaurantes.map((restaurante) => (
         <Restaurante
-          key={restau.id}
-          id={restau.id}
-          titulo={restau.titulo}
-          tipo={restau.tipo}
-          avaliacao={restau.avaliacao}
-          descricao={restau.descricao}
-          capa={restau.capa}
-          cardapio={restau.cardapio}
-          destacado={restau.destacado}
+          key={restaurante.id}
+          id={restaurante.id}
+          titulo={restaurante.titulo}
+          tipo={restaurante.tipo}
+          avaliacao={restaurante.avaliacao}
+          descricao={restaurante.descricao}
+          capa={restaurante.capa}
+          cardapio={restaurante.cardapio}
+          destacado={restaurante.destacado}
         />
       ))}
     </Lista>

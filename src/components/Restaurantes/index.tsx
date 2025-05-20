@@ -45,6 +45,12 @@ const Restaurante = ({
   tipo,
   titulo
 }: RestauranteType) => {
+  const getDescription = (descricao: string) => {
+    if (descricao.length > 220) {
+      return descricao.slice(0, 190) + '...'
+    }
+    return descricao
+  }
   return (
     <RestContainer className="container-restaurante">
       <div key={id}>
@@ -65,7 +71,7 @@ const Restaurante = ({
       </NotaCont>
 
       <Descricao>
-        <DesText>{descricao}</DesText>
+        <DesText>{getDescription(descricao)}</DesText>
       </Descricao>
       <BotaoLink href="/perfil">Saiba mais</BotaoLink>
     </RestContainer>

@@ -63,15 +63,14 @@ export const Descricao = styled.div`
   width: 456px;
   height: 88px;
   margin-left: 8px;
-  margin-bottom: 18px;
 `
 export const DesText = styled.p`
   font-family: Roboto sans-serif;
   font-weight: 400;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 22px;
+  letter-spacing: 0%;
   color: ${cores.salmon};
-  margin-top: -16px;
 `
 
 export const Avaliacao = styled.img`
@@ -91,6 +90,6 @@ export const BotaoLink = styled.a`
   color: ${cores.Bege};
   border: none;
   padding: 5px;
-  margin: 8px;
+  margin-left: 8px;
   text-decoration: none;
 `
