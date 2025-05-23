@@ -11,16 +11,13 @@ import {
   ImgRest
 } from './styles'
 import NotaImg from '../../assets/image/star_favorite.png'
-import Massa from '../../assets/image/macarrao.png'
-import { useEffect, useState } from 'react'
 
-// export type PropsRestaurante = {
-//   nome: string
-//   destaque: string
-//   categoria?: string
-//   avaliacoes?: number
-//   ref?: string
-// }
+export const getDescription = (descricao: string) => {
+  if (descricao.length > 220) {
+    return descricao.slice(0, 190) + '...'
+  }
+  return descricao
+}
 
 export type RestauranteType = {
   id: number
@@ -45,12 +42,6 @@ const Restaurante = ({
   tipo,
   titulo
 }: RestauranteType) => {
-  const getDescription = (descricao: string) => {
-    if (descricao.length > 220) {
-      return descricao.slice(0, 190) + '...'
-    }
-    return descricao
-  }
   return (
     <RestContainer className="container-restaurante">
       <div key={id}>

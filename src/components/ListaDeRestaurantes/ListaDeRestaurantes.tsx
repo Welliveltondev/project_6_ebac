@@ -2,10 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Lista } from './styles'
 import Restaurante, { RestauranteType } from '../Restaurantes'
 
-type Aderreços = {
-  restaurantes: RestauranteType[]
-}
-
 const ListaDeRestaurantes = () => {
   const [stateRestaurantes, setRestaurante] = useState<RestauranteType[]>([])
 

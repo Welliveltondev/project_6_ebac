@@ -2,21 +2,11 @@ import { useEffect, useState } from 'react'
 import esfirra from '../../assets/image/esfirra.png'
 
 import * as S from './styles'
-
-export type RestauranteType = {
-  id: string
-  titulo: string
-  destacado: boolean
-  tipo: string
-  avaliacao: number
-  descricao: string
-  capa: string
-  cardapio: string
-  preco: number
-}
+import { RestauranteType } from '../Restaurantes'
 
 const Produto = () => {
-  const [produto, setProduto] = useState<RestauranteType[]>()
+  const [modal, setModal] = useState(false)
+  const [produto, setProduto] = useState<RestauranteType>()
   useEffect(() => {
     fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes')
       .then((res) => res.json())
@@ -31,7 +21,9 @@ const Produto = () => {
           A clássica Marguerita: molho de tomate suculento, mussarela derretida,
           manjericão fresco e um toque de azeite. Sabor e simplicidade!
         </S.ParagraPro>
-        <S.BotaoProdu>Adicionar ao carrinho</S.BotaoProdu>
+        <S.BotaoProdu onClick={() => setModal(true)}>
+          Adicionar ao carrinho
+        </S.BotaoProdu>
       </S.DivProduto>
     </>
   )

@@ -95,22 +95,31 @@ export const Paragrafo2 = styled.p`
   z-index: 1000;
   margin-top: 160px;
 `
-export const ListaProdutos = styled.div`
-  max-width: 1024px;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-`
+//modal
 
-//Aqui começa o estilo da Modal //
 export const Modal = styled.div`
   position: relative;
   z-index: 1000;
+
+  &.visivel{
+    display: none;
+    transition: all .5s ease;
+  }
+
+  &.overlay {
+  width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    content: '';
+  }
+}
 `
 
 export const Conteudo = styled.div`
-  display: none;
+  display: flex;
   margin: 0 auto;
   background-color: ${cores.salmon};
   width: 1024px;
@@ -118,7 +127,7 @@ export const Conteudo = styled.div`
   position: fixed;
   top: 123px;
   left: 48vh;
-  z-index: 100;
+  z-index: 1000;
   transition: all 0.3s ease;
 
   span {
@@ -131,10 +140,6 @@ export const Conteudo = styled.div`
       margin: 8px;
       cursor: pointer;
     }
-  }
-
-  &.visivel {
-    display: flex;
   }
 `
 

@@ -1,77 +1,63 @@
+type Props = {
+  produtos: RestauranteType[]
+}
+import { RestauranteType } from '../Restaurantes'
+import * as S from './styles'
 import esfirra from '../../assets/image/esfirra.png'
 import close from '../../assets/image/close.png'
-
-import Produto, { RestauranteType } from '../Produto'
-import {
-  HeaderPerfil,
-  Logo,
-  PerfilContainer,
-  RestPerfil,
-  CartPefil,
-  Apresentacao,
-  Paragrafo2,
-  ListaProdutos,
-  Paragrafo,
-  Title,
-  Botao_Modal,
-  Description,
-  SaibaMais,
-  ImgModal,
-  Conteudo,
-  Modal
-} from './styles'
 
 import LogoImg from '../../assets/image/logo.png'
 import Massa from '../../assets/image/macarrao.png'
 import Vetor from '../../assets/image/Vector.png'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import ListaDeProdutos from '../ListaDeProdutos/ListaDeProdutos'
 
-const Perfil = () => {
+const Perfil = ({ produtos }: Props) => {
   const [modalOpen, setModalOpen] = useState(false)
+  const [produto, setProdut] = useState<RestauranteType>()
+
+  useEffect(() => {
+    fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes')
+      .then((res) => res.json())
+      .then((res) => setProdut(res))
+  }, [])
 
   return (
     <>
-      <PerfilContainer id="perfil">
-        <HeaderPerfil style={{ backgroundImage: `url(${Vetor})` }}>
+      <S.PerfilContainer id="perfil">
+        <S.HeaderPerfil style={{ backgroundImage: `url(${Vetor})` }}>
           <div>
-            <RestPerfil>Restaurante</RestPerfil>
-            <Logo>
+            <S.RestPerfil>Restaurante</S.RestPerfil>
+            <S.Logo>
               <img src={LogoImg} alt="" />
-            </Logo>
-            <CartPefil onClick={() => setModalOpen(true)}>
+            </S.Logo>
+            <S.CartPefil onClick={() => setModalOpen(false)}>
               0 produtos no carrinho{' '}
-            </CartPefil>
+            </S.CartPefil>
           </div>
-        </HeaderPerfil>
-        <Apresentacao style={{ backgroundImage: `url(${Massa})` }}>
+        </S.HeaderPerfil>
+        <S.Apresentacao style={{ backgroundImage: `url(${Massa})` }}>
           <div>
-            <Paragrafo>italiana</Paragrafo>
-            <Paragrafo2>La Dolce Vita Trattoria</Paragrafo2>
+            <S.Paragrafo>italiana</S.Paragrafo>
+            <S.Paragrafo2>La Dolce Vita Trattoria</S.Paragrafo2>
           </div>
-        </Apresentacao>
-      </PerfilContainer>
-      <ListaProdutos>
-        <Produto />
-        <Produto />
-        <Produto />
+        </S.Apresentacao>
+        <ListaDeProdutos />
+      </S.PerfilContainer>
+      {/* <Modal /> */}
 
-        <Produto />
-        <Produto />
-        <Produto />
-      </ListaProdutos>
-
-      <Modal className="overlay">
-        <Conteudo className={modalOpen ? 'visivel' : ''}>
+      <S.Modal className={modalOpen ? 'visivel' : 'overlay'}>
+        <S.Conteudo>
           <div>
-            <ImgModal src={esfirra} alt="" />
+            <S.ImgModal src={esfirra} alt="" />
           </div>
           <div>
             <span>
-              <Title>Pizza Marguerita</Title>
-              <img onClick={() => setModalOpen(false)} src={close} alt="" />
+              <S.Title>Pizza Marguerita</S.Title>
+              <img onClick={() => setModalOpen(true)} src={close} alt="" />
             </span>
 
-            <Description>
+            <S.Description>
               A pizza Margherita é uma pizza clássica da culinária italiana,
               reconhecida por sua simplicidade e sabor inigualável. Ela é feita
               com uma base de massa fina e crocante, coberta com molho de tomate
@@ -85,13 +71,14 @@ const Perfil = () => {
               <br />
               <br />
               Serve: de 2 a 3 pessoas
-            </Description>
-            <Botao_Modal onClick={() => setModalOpen(false)}>
-              <SaibaMais>Adicionar ao carrinho - R$60,60</SaibaMais>
-            </Botao_Modal>
+            </S.Description>
+            <S.Botao_Modal>
+              <S.SaibaMais>Adicionar ao carrinho - R$60,60</S.SaibaMais>
+            </S.Botao_Modal>
           </div>
-        </Conteudo>
-      </Modal>
+        </S.Conteudo>
+        <div className="overlay"></div>
+      </S.Modal>
     </>
   )
 }
