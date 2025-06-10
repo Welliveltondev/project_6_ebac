@@ -9,7 +9,6 @@ function App() {
       <div className="App">
         <GlobalStyle />
         <Rotas />
-        <Footer />
       </div>
     </BrowserRouter>
   )

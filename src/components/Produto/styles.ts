@@ -13,6 +13,10 @@ export const DivProduto = styled.div`
     box-shadow: 5px 20px 10px rgba(0, 0, 0, 0.25);
     transform: translateY(-5px);
   }
+
+  &.visivel {
+    display: none;
+  }
 `
 export const ImgProdu = styled.img`
   width: 304px;

@@ -11,10 +11,12 @@ import Massa from '../../assets/image/macarrao.png'
 import Vetor from '../../assets/image/Vector.png'
 import { useEffect, useState } from 'react'
 import ListaDeProdutos from '../ListaDeProdutos/ListaDeProdutos'
+import Footer from '../Footer'
+import { useContext } from 'react'
 
-const Perfil = ({ produtos }: Props) => {
+const Perfil = () => {
   const [modalOpen, setModalOpen] = useState(false)
-  const [produto, setProdut] = useState<RestauranteType>()
+  const [produto, setProdut] = useState<RestauranteType>() //estado para definir produtos atraves da api
 
   useEffect(() => {
     fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes')
@@ -23,11 +25,11 @@ const Perfil = ({ produtos }: Props) => {
   }, [])
 
   return (
-    <>
-      <S.PerfilContainer id="perfil">
+    <S.Father>
+      <S.PerfilContainer>
         <S.HeaderPerfil style={{ backgroundImage: `url(${Vetor})` }}>
           <div>
-            <S.RestPerfil>Restaurante</S.RestPerfil>
+            <S.RestPerfil>restaurante</S.RestPerfil>
             <S.Logo>
               <img src={LogoImg} alt="" />
             </S.Logo>
@@ -42,6 +44,7 @@ const Perfil = ({ produtos }: Props) => {
             <S.Paragrafo2>La Dolce Vita Trattoria</S.Paragrafo2>
           </div>
         </S.Apresentacao>
+
         <ListaDeProdutos />
       </S.PerfilContainer>
       {/* <Modal /> */}
@@ -79,7 +82,8 @@ const Perfil = ({ produtos }: Props) => {
         </S.Conteudo>
         <div className="overlay"></div>
       </S.Modal>
-    </>
+      <Footer />
+    </S.Father>
   )
 }
 

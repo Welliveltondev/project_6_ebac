@@ -1,17 +1,21 @@
 import styled from 'styled-components'
 import { cores } from '../../styles'
 
+export const Father = styled.div`
+  position: relative;
+`
+
 export const PerfilContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 50px;
+  height: 100%;
 `
 
 export const HeaderPerfil = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   height: 186px;
-  position: relative;
 
   div {
     display: flex;
@@ -20,7 +24,6 @@ export const HeaderPerfil = styled.div`
     margin: 0 auto;
     max-width: 1024px;
     margin-top: 23px;
-    position: relative;
   }
 `
 export const Logo = styled.div`
@@ -62,16 +65,16 @@ export const Apresentacao = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
 
-  ::after {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.1);
-    position: absolute;
-    content: '';
+    ::after {
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.1);
+      content: '';
+      position: absolute;
+    }
   }
 `
 export const Paragrafo = styled.p`
@@ -99,21 +102,23 @@ export const Paragrafo2 = styled.p`
 
 export const Modal = styled.div`
   position: relative;
-  z-index: 1000;
+  display: flex;
 
   &.visivel{
     display: none;
     transition: all .5s ease;
+
   }
 
   &.overlay {
-  width: 100%;
+    width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.7);
     position: absolute;
     content: '';
+    z-index: 1000;
   }
 }
 `
