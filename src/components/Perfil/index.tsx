@@ -29,7 +29,7 @@ const Perfil = () => {
       <S.PerfilContainer>
         <S.HeaderPerfil style={{ backgroundImage: `url(${Vetor})` }}>
           <div>
-            <S.RestPerfil>resta</S.RestPerfil>
+            <S.RestPerfil>Reastaurantes</S.RestPerfil>
             <S.Logo>
               <img src={LogoImg} alt="" />
             </S.Logo>
