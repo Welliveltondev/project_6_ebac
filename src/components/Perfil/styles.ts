@@ -59,12 +59,20 @@ export const Apresentacao = styled.div`
   display: block;
   position: relative;
 
-  div {
+  span {
     max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  div {
+    max-width: 100%;
+    height: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
 
     ::after {
       width: 100%;
@@ -97,95 +105,4 @@ export const Paragrafo2 = styled.p`
   letter-spacing: 0%;
   z-index: 1000;
   margin-top: 160px;
-`
-//modal
-
-export const Modal = styled.div`
-  position: relative;
-  display: flex;
-
-  &.visivel{
-    display: none;
-    transition: all .5s ease;
-
-  }
-
-  &.overlay {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    position: absolute;
-    content: '';
-    z-index: 1000;
-  }
-}
-`
-
-export const Conteudo = styled.div`
-  display: flex;
-  margin: 0 auto;
-  background-color: ${cores.salmon};
-  width: 1024px;
-  height: 344px;
-  position: fixed;
-  top: 123px;
-  left: 48vh;
-  z-index: 1000;
-  transition: all 0.3s ease;
-
-  span {
-    display: flex;
-    justify-content: space-between;
-
-    img {
-      width: 18px;
-      height: 18px;
-      margin: 8px;
-      cursor: pointer;
-    }
-  }
-`
-
-export const ImgModal = styled.img`
-  width: 280px;
-  height: 280px;
-  margin: 32px;
-`
-export const Title = styled.h3`
-  width: 140px;
-  height: 21px;
-  margin: 32px 0 16px;
-  font-weight: 900;
-  font-size: 18px;
-  color: #ffffff;
-  line-height: 100%;
-  letter-spacing: 0%;
-`
-
-export const Description = styled.p`
-  width: 656px;
-  height: 176px;
-  margin: 16px 0;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 22px;
-  color: ${cores.white};
-`
-
-export const Botao_Modal = styled.button`
-  width: 218px;
-  height: 24px;
-  color: ${cores.salmon};
-  border: none;
-  background-color: ${cores.Bege};
-`
-export const SaibaMais = styled.a`
-  width: 204px;
-  height: 16px;
-  font-weight: 700;
-  font-size: 14px;
-  border: none;
-  cursor: pointer;
 `

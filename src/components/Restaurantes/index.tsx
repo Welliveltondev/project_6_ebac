@@ -11,6 +11,7 @@ import {
   ImgRest
 } from './styles'
 import NotaImg from '../../assets/image/star_favorite.png'
+import { useGetFullResQuery } from '../../services/api'
 
 export const getDescription = (descricao: string) => {
   if (descricao.length > 220) {
@@ -42,6 +43,8 @@ const Restaurante = ({
   tipo,
   titulo
 }: RestauranteType) => {
+  const { data } = useGetFullResQuery()
+
   return (
     <RestContainer className="container-restaurante">
       <div key={id}>
