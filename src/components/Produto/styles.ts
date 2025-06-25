@@ -55,7 +55,6 @@ export const ModalCon = styled.div`
   &.visivel{
     display: none;
     transition: all .5s ease;
-
   }
 
   &.overlay {
@@ -64,7 +63,7 @@ export const ModalCon = styled.div`
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     position: absolute;
     content: '';
   }
@@ -103,12 +102,12 @@ export const ImgModal = styled.img`
 export const Title = styled.h3`
   width: 140px;
   height: 21px;
-  margin: 32px 0 16px;
+  margin: 32px 0 0;
   font-weight: 900;
   font-size: 18px;
   color: #ffffff;
   line-height: 100%;
-  letter-spacing: 0%;
+  font-family: Roboto;
 `
 
 export const Description = styled.p`
