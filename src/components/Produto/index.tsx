@@ -30,7 +30,7 @@ const Produto = () => {
     <div>
       <S.DivProduto>
         <S.ImgProdu src={esfirra} alt="" />
-        <S.H3Produ>{}</S.H3Produ>
+        <S.H3Produ>Pizza Marguerita</S.H3Produ>
         <S.ParagraPro>
           A clássica Marguerita: molho de tomate suculento, mussarela derretida,
           manjericão fresco e um toque de azeite. Sabor e simplicidade!

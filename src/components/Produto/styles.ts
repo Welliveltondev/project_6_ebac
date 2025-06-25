@@ -3,7 +3,7 @@ import { cores } from '../../styles'
 
 export const DivProduto = styled.div`
   width: 320px;
-  height: 340px;
+  height: 338px;
   background-color: ${cores.salmon};
   margin: 10px;
   box-shadow: 2px 10px 5px rgba(0, 0, 0, 0.25);

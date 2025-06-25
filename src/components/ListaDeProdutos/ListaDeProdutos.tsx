@@ -7,6 +7,11 @@ const ListaDeProdutos = () => {
   return (
     <Lista>
       <Produto />
+      <Produto />
+      <Produto />
+      <Produto />
+      <Produto />
+      <Produto />
     </Lista>
   )
 }
