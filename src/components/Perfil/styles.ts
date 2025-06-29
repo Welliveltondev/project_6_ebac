@@ -105,4 +105,6 @@ export const Paragrafo2 = styled.p`
   letter-spacing: 0%;
   z-index: 1000;
   margin-top: 160px;
+  z-index: 10;
+  position: absolute;
 `
