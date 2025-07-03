@@ -6,6 +6,7 @@ import { useGetFullResQuery } from '../../services/api'
 
 const ListaDeRestaurantes = () => {
   const { data: restaurante } = useGetFullResQuery()
+
   const [stateRestaurantes, setRestaurante] = useState<RestauranteType[]>([])
 
   useEffect(() => {

@@ -3,6 +3,7 @@ import Rotas from './routes'
 import { GlobalStyle } from './styles'
 import { BrowserRouter } from 'react-router-dom'
 import { store } from './store'
+import Cart from './components/Cart/Cart'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <GlobalStyle />
           <Rotas />
         </div>
+        <Cart />
       </BrowserRouter>
     </Provider>
   )
