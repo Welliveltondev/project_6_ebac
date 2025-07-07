@@ -4,6 +4,7 @@ import close from '../../assets/image/close.png'
 
 import * as S from './styles'
 import { RestauranteType } from '../Restaurantes'
+import { useDispatch } from 'react-redux'
 type ProdutTypes = {
   id: number
   titulo: string
@@ -16,7 +17,20 @@ type ProdutTypes = {
   preco?: number
 }
 
-const Produto = () => {
+type ProdutoProps = {
+  produto: ProdutTypes
+}
+
+import { add, open } from '../../store/reducer/cart'
+const Produto = ({ produto }: ProdutoProps) => {
+  const dispatch = useDispatch()
+
+  const addToCart = () => {
+    dispatch(add(produto))
+    setModalOpen(true)
+    dispatch(open())
+  }
+
   const [stateProdutos, setProdutos] = useState<RestauranteType[]>([])
 
   useEffect(() => {
@@ -67,7 +81,9 @@ const Produto = () => {
               Serve: de 2 a 3 pessoas
             </S.Description>
             <S.Botao_Modal>
-              <S.SaibaMais>Adicionar ao carrinho - R$60,60</S.SaibaMais>
+              <S.SaibaMais onClick={addToCart}>
+                Adicionar ao carrinho - R$60,60
+              </S.SaibaMais>
             </S.Botao_Modal>
           </div>
         </S.Conteudo>

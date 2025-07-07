@@ -15,7 +15,7 @@ import { useGetFullResQuery } from '../../services/api'
 
 export const getDescription = (descricao: string) => {
   if (descricao.length > 220) {
-    return descricao.slice(0, 190) + '...'
+    return descricao.slice(0, 170) + '...'
   }
   return descricao
 }

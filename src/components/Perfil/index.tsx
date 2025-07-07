@@ -1,29 +1,21 @@
-type Props = {
-  produtos: RestauranteType[]
-}
-import { RestauranteType } from '../Restaurantes'
-import * as S from './styles'
-import esfirra from '../../assets/image/esfirra.png'
-import close from '../../assets/image/close.png'
+import { open } from '../../store/reducer/cart'
 
+import * as S from './styles'
 import LogoImg from '../../assets/image/logo.png'
 import Massa from '../../assets/image/macarrao.png'
 import Vetor from '../../assets/image/Vector.png'
-import { useEffect, useState } from 'react'
 import ListaDeProdutos from '../ListaDeProdutos/ListaDeProdutos'
 import Footer from '../Footer'
-import { useGetFullResQuery } from '../../services/api'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootReducer } from '../../store'
 
 const Perfil = () => {
-  const [modalOpen, setModalOpen] = useState(false)
-  // const [produto, setProdut] = useState<RestauranteType>() //estado para definir produtos atraves da api
-  const { data: produto } = useGetFullResQuery()
-  // useEffect(() => {
-  //   fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes')
-  //     .then((res) => res.json())
-  //     .then((res) => setProdut(res))
-  // }, [])
+  const dispatch = useDispatch()
+  const openCart = () => {
+    dispatch(open())
+  }
 
+  const { items } = useSelector((state: RootReducer) => state.cart)
   return (
     <S.Father>
       <S.PerfilContainer>
@@ -33,7 +25,9 @@ const Perfil = () => {
             <S.Logo>
               <img src={LogoImg} alt="" />
             </S.Logo>
-            <S.CartPefil>0 produtos no carrinho </S.CartPefil>
+            <S.CartPefil onClick={openCart}>
+              {items.length} produtos no carrinho{' '}
+            </S.CartPefil>
           </div>
         </S.HeaderPerfil>
         <S.Apresentacao style={{ backgroundImage: `url(${Massa})` }}>

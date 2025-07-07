@@ -18,8 +18,9 @@ export const CartContainer = styled.div`
   height: 100%;
   display: none;
   justify-content: flex-end;
+  transition: all 0.5s ease;
 
-  & is-open {
+  &.is-open {
     display: flex;
   }
 `

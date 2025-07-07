@@ -14,37 +14,46 @@ import {
   Titlecart,
   Totalcart
 } from './styles'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
+import { close, remove } from '../../store/reducer/cart'
 
 const Cart = () => {
-  const { isOpen } = useSelector((state: RootReducer) => state.cart)
+  const dispatch = useDispatch()
+
+  const closeCart = () => {
+    dispatch(close())
+  }
+
+  const removeItem = (id: number) => {
+    dispatch(remove(id))
+  }
+
+  const getTotalPrice = () => {
+    return items.reduce((acumulator, valor) => {
+      return (acumulator += valor.preco!)
+    }, 0)
+  }
+  const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
   return (
-    <CartContainer>
-      <Overlay />
+    <CartContainer className={isOpen ? 'is-open' : ''}>
+      <Overlay onClick={closeCart} />
       <Sidebar>
         <ul>
-          <LiProduto>
-            <ImgCart src={pizza} alt="" />
-            <ConatinerTextCart>
-              <Titlecart>Pizza Marguerita</Titlecart>
-              <PrecoCart>R$ 60,90</PrecoCart>
-            </ConatinerTextCart>
-            <Lixeira>x</Lixeira>
-          </LiProduto>
-
-          <LiProduto>
-            <ImgCart src={pizza} alt="" />
-            <ConatinerTextCart>
-              <Titlecart>Pizza Marguerita</Titlecart>
-              <PrecoCart>R$ 60,90</PrecoCart>
-            </ConatinerTextCart>
-            <Lixeira>x</Lixeira>
-          </LiProduto>
+          {items.map((item) => (
+            <LiProduto key={item.id}>
+              <ImgCart src={item.capa} alt="" />
+              <ConatinerTextCart>
+                <Titlecart>{item.titulo}</Titlecart>
+                <PrecoCart>{item.preco}</PrecoCart>
+              </ConatinerTextCart>
+              <Lixeira onClick={() => removeItem(item.id)}>x</Lixeira>
+            </LiProduto>
+          ))}
         </ul>
         <Totalcart>
           <p>Valor total</p>
-          <span>R$ 182,7</span>
+          <span>R$ {getTotalPrice()}</span>
         </Totalcart>
         <ButonCart type="button">Continuar com a compra</ButonCart>
       </Sidebar>
