@@ -3,7 +3,7 @@ import esfirra from '../../assets/image/esfirra.png'
 import close from '../../assets/image/close.png'
 
 import * as S from './styles'
-import { RestauranteType } from '../Restaurantes'
+import { getDescription, RestauranteType } from '../Restaurantes'
 import { useDispatch } from 'react-redux'
 type ProdutTypes = {
   id: number
@@ -18,10 +18,12 @@ type ProdutTypes = {
 }
 
 type ProdutoProps = {
-  produto: ProdutTypes
+  produto: RestauranteType
 }
 
 import { add, open } from '../../store/reducer/cart'
+import { useGetFullResQuery } from '../../services/api'
+
 const Produto = ({ produto }: ProdutoProps) => {
   const dispatch = useDispatch()
 
@@ -40,19 +42,19 @@ const Produto = ({ produto }: ProdutoProps) => {
   }, [])
   const [modalOpen, setModalOpen] = useState(true)
 
+  const { data } = useGetFullResQuery()
   return (
     <div>
-      <S.DivProduto>
-        <S.ImgProdu src={esfirra} alt="" />
-        <S.H3Produ>Pizza Marguerita</S.H3Produ>
-        <S.ParagraPro>
-          A clássica Marguerita: molho de tomate suculento, mussarela derretida,
-          manjericão fresco e um toque de azeite. Sabor e simplicidade!
-        </S.ParagraPro>
-        <S.BotaoProdu onClick={() => setModalOpen(false)}>
-          Adicionar ao carrinho
-        </S.BotaoProdu>
-      </S.DivProduto>
+      {data?.map((item: RestauranteType) => (
+        <S.DivProduto key={item.id}>
+          <S.ImgProdu src={item.capa} alt="" />
+          <S.H3Produ>{item.titulo}</S.H3Produ>
+          <S.ParagraPro>{getDescription(item.descricao)}</S.ParagraPro>
+          <S.BotaoProdu onClick={() => setModalOpen(false)}>
+            Adicionar ao carrinho
+          </S.BotaoProdu>
+        </S.DivProduto>
+      ))}
 
       <S.ModalCon className={modalOpen ? 'visivel' : 'overlay'}>
         <S.Conteudo>

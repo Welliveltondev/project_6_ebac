@@ -12,7 +12,7 @@ const ListaDeProdutos = () => {
     <Lista>
       <Produto
         produto={{
-          id: 1,
+          id: 0,
           titulo: '',
           destacado: undefined,
           tipo: '',
@@ -23,22 +23,19 @@ const ListaDeProdutos = () => {
           preco: undefined
         }}
       />
-      {/* {items.map((item) => (
-        <Produto
-          key={item.id}
-          produto={{
-            id: item.id,
-            titulo: item.titulo,
-            destacado: undefined,
-            tipo: '',
-            avaliacao: 0,
-            descricao: item.descricao,
-            capa: item.capa,
-            cardapio: undefined,
-            preco: undefined
-          }}
-        />
-      ))} */}
+      <Produto
+        produto={{
+          id: 0,
+          titulo: '',
+          destacado: undefined,
+          tipo: '',
+          avaliacao: 0,
+          descricao: '',
+          capa: '',
+          cardapio: undefined,
+          preco: undefined
+        }}
+      />
     </Lista>
   )
 }

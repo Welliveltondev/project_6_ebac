@@ -12,8 +12,9 @@ export const RestContainer = styled.div`
 `
 
 export const ImgRest = styled.img`
+  max-width: 100%;
   width: 100%;
-  height: 218px;
+  max-height: 218px;
 `
 
 export const NotaCont = styled.div`

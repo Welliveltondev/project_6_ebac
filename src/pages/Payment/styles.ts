@@ -7,7 +7,7 @@ export const PaymentContainer = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  display: none;
+  display: flex;
   justify-content: flex-end;
   transition: all 0.5s ease;
 `
@@ -27,6 +27,7 @@ export const OverlayPayment = styled.div`
   height: 100%;
   background-color: #000;
   opacity: 0.6;
+  z-index: -11;
 `
 
 export const PaymentTitle = styled.p`
@@ -75,9 +76,10 @@ export const CVVcog = styled.div`
 
   input {
     width: 87px;
-    border: none;
+    border: flex;
     height: 32px;
     background-color: ${cores.Bege};
+    border: 1px solid transparent;
   }
 `
 
@@ -99,6 +101,7 @@ export const PaymentButton = styled.button`
   background-color: ${cores.salmon};
   border: none;
   margin-top: 24px;
+
   button {
     width: 100%;
     height: 24px;
@@ -108,4 +111,5 @@ export const PaymentButton = styled.button`
     color: ${cores.salmon};
     margin-bottom: 8px;
     border: none;
+    cursor: pointer;
 `

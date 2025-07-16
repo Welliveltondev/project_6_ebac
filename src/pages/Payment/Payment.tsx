@@ -13,11 +13,20 @@ import {
   CVVcog,
   Expires
 } from './styles'
+import { useDispatch } from 'react-redux'
+import { close } from '../../store/reducer/cart'
+import { RootReducer } from '../../store'
 
 const Payment = () => {
+  const dispatch = useDispatch()
+
+  const closeCart = () => {
+    dispatch(close())
+  }
+
   return (
     <PaymentContainer>
-      <OverlayPayment />
+      <OverlayPayment onClick={closeCart} />
 
       <PaymentSidebar>
         <PaymentTitle>Pagamento - Valor a pagar R$ 190,90</PaymentTitle>
